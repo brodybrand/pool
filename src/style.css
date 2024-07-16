@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("./fonts/roboto-regular-webfont.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  text-decoration: none;
+  list-style: none;
+
+  font-family: "Roboto";
+}
+body {
+  background-color: black;
+}
+/* main header, sidebar, content footer */
+.body-wrapper {
+  margin: 0 auto;
+  height: 100%;
+  width: clamp(350px, 70%, 700px);
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 1.5fr 5fr;
+  grid-template-rows: 0.75fr 15fr 0.5fr;
+}
+
+.header,
+.footer {
+  grid-column: 1 / 3;
+}
+
+.header {
+  grid-row: 1 / 2;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.content-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+/* focus header */
+.header {
+  background-color: rgba(128, 128, 128, 0.164);
+
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  align-items: center;
+
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.logo-wrapper {
+  grid-column: 1 / 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+}
+
+img {
+  /* height: 2em; */
+  height: clamp(3rem, 6vw, 7.5rem);
+}
+
+.app-name {
+  font-size: clamp(1rem, 2vw, 2.5rem);
+}
+
+.nav {
+  grid-column: 2 / 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 40%;
+  padding-right: 10%;
+}
+
+/* focus sidebar */
+.sidebar {
+  background-color: rgba(173, 216, 230, 0.437);
+  display: grid;
+  grid-template-rows: minmax(0.5rem, 5rem) 10fr;
+  width: clamp(50%, 100%, 150%);
+
+  padding: 10% 0 0 10%;
+
+  /* font-size: clamp(1rem, 1.25vw, 2rem); */
+}
+
+.sidebar-header {
+  grid-row: 1 / 2;
+
+  align-self: end;
+  padding-bottom: 10%;
+}
+
+.sidebar-links-wrapper {
+  grid-row: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar-link:nth-child(n + 2) {
+  padding-top: 5%;
+}
+
+/* focus footer */
+.footer {
+  background-color: rgba(128, 128, 128, 0.164);
+  margin-top: 0;
+}
+.footer-links-wrapper {
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 0.75em;
+}
+
+/* content */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  margin: 2.5% 5% 5% 5%;
+}
+
+p {
+  padding-bottom: 5%;
+  font-size: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+h2 {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
